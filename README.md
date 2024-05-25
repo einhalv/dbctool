@@ -2,6 +2,15 @@ Module dbctool
 ==============
 A tool to read and manipulate dbc files. The module  has a Parser class with a metohd  that parses the content of a dbc file held in a string and returns the content on an intermediate format in the form of a list of parsed dbc-sections. This intermediate format can be used to initialize an object of the Bus class. The objects of this class can hold the same information that a dbc-file can, but does so in a more structured form. Most, but not all, dbc sections are implemented. The class also has a method to generate a dbc representation of the object's content. 
 
+Some flexibility is added in parsing:
+  - Both space and comma are allowed as separators in transmitter lists.
+  - There can be any number of whitespaces before and after colon in section names, also in NS_.
+  - Negative values are allowed in value descriptions.
+  - Any character is accepted in strings except \ and ".
+  
+Type is probably not well handled for attributes.
+
+
 
 Usage example
 -------------
