@@ -883,7 +883,7 @@ class Bus():
             msg = self.messages[id]
             for sig in msg.signals:
                 if sig.multiplex_value is not None:
-                    nunmuxed.append((msg, sig))
+                    nonmuxed.append((msg, sig))
         if nonmuxed:  # do this for now, later maybe assign to toplevel mux
             s = "there were signals with unspecified multiplexor: "
             for t in nonmuxed:
